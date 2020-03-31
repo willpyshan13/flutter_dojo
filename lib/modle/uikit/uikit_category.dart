@@ -2,18 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dojo/common/base_widget.dart';
 import 'package:flutter_dojo/common/demo_item.dart';
 import 'package:flutter_dojo/uikit/clock.dart';
+import 'package:flutter_dojo/uikit/color.dart';
+import 'package:flutter_dojo/uikit/curvefitting.dart';
 import 'package:flutter_dojo/uikit/curves.dart';
 import 'package:flutter_dojo/uikit/dashedline.dart';
+import 'package:flutter_dojo/uikit/drawimage.dart';
 import 'package:flutter_dojo/uikit/drawstyle.dart';
 import 'package:flutter_dojo/uikit/drawtext.dart';
 import 'package:flutter_dojo/uikit/feedback.dart';
 import 'package:flutter_dojo/uikit/gesturepainter.dart';
+import 'package:flutter_dojo/uikit/interpolator.dart';
 import 'package:flutter_dojo/uikit/keyboard.dart';
+import 'package:flutter_dojo/uikit/linemetrics.dart';
 import 'package:flutter_dojo/uikit/matrix4.dart';
 import 'package:flutter_dojo/uikit/nstar.dart';
 import 'package:flutter_dojo/uikit/position.dart';
 import 'package:flutter_dojo/uikit/pullrefresh.dart';
 import 'package:flutter_dojo/uikit/randomcolor.dart';
+import 'package:flutter_dojo/uikit/repaintboundary.dart';
 import 'package:flutter_dojo/uikit/roundimage.dart';
 import 'package:flutter_dojo/uikit/screenorientation.dart';
 import 'package:flutter_dojo/uikit/screenshot.dart';
@@ -33,10 +39,31 @@ List<DemoItem> buildUIKitCategoryList = [
   ),
   DemoItem(
     icon: Icons.pages,
+    title: 'CurveFitting',
+    subtitle: 'CurveFitting',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('CurveFitting', codePath, CurveFittingWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
     title: 'Clock',
     subtitle: 'Clock',
     documentationUrl: '',
     buildRoute: (context) => BaseWidget('Clock', codePath, ClockWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
+    title: 'Color',
+    subtitle: 'Color',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('Color', codePath, ColorWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
+    title: 'DrawImage',
+    subtitle: 'DrawImage',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('DrawImage', codePath, DrawImageWidget()),
   ),
   DemoItem(
     icon: Icons.pages,
@@ -72,6 +99,20 @@ List<DemoItem> buildUIKitCategoryList = [
     subtitle: 'GesturePainter',
     documentationUrl: '',
     buildRoute: (context) => BaseWidget('GesturePainter', codePath, GesturePainterWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
+    title: 'Interpolator',
+    subtitle: 'Interpolator',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('Interpolator', codePath, InterpolatorWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
+    title: 'LineMetrics',
+    subtitle: 'LineMetrics',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('LineMetrics', codePath, LineMetricsWidget()),
   ),
   DemoItem(
     icon: Icons.pages,
@@ -114,6 +155,13 @@ List<DemoItem> buildUIKitCategoryList = [
     subtitle: 'RandomColor',
     documentationUrl: '',
     buildRoute: (context) => BaseWidget('RandomColor', codePath, RandomColorWidget()),
+  ),
+  DemoItem(
+    icon: Icons.pages,
+    title: 'RepaintBoundary',
+    subtitle: 'RepaintBoundary',
+    documentationUrl: '',
+    buildRoute: (context) => BaseWidget('RepaintBoundary', codePath, RepaintBoundaryWidget()),
   ),
   DemoItem(
     icon: Icons.pages,

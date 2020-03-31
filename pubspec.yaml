@@ -23,14 +23,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  flutter_markdown: ^0.2.0
-  share: ^0.6.3+1
-  provider: ^3.1.0+1
-  shared_preferences: ^0.5.3+1
-  path_provider: ^1.1.0
-  sqflite: ^1.1.7+3
-  build_runner: ^1.3.3
-  json_serializable: ^2.2.1
+  flutter_markdown: ^0.3.3
+  share: ^0.6.3+5
+  provider: ^4.0.4
+  shared_preferences: ^0.5.6+1
+  path_provider: ^1.6.0
+  sqflite: ^1.2.0
+  build_runner: ^1.7.3
+  json_serializable: ^3.2.5
+  url_launcher: ^5.4.2
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,8 @@ flutter:
     - lib/widgets/appstructurenavigation/tabpageselector.dart
     - lib/widgets/appstructurenavigation/widgetsapp.dart
     - lib/widgets/appstructurenavigation/safearea.dart
+    - lib/widgets/appstructurenavigation/tabbar.dart
+    - lib/widgets/appstructurenavigation/defaulttabcontroller.dart
 
     - lib/widgets/assetsimageicon/assetbundle.dart
     - lib/widgets/assetsimageicon/icon.dart
@@ -97,6 +100,7 @@ flutter:
     - lib/widgets/async/futurebuilder.dart
     - lib/widgets/async/inheritedmodel.dart
     - lib/widgets/async/inheritedwidget.dart
+    - lib/widgets/async/valuenotifier.dart
 
     - lib/widgets/basic/placeholder.dart
     - lib/widgets/basic/scaffold.dart
@@ -110,7 +114,6 @@ flutter:
     - lib/widgets/buttons/popupmenubutton.dart
     - lib/widgets/buttons/raisedbutton.dart
     - lib/widgets/buttons/rawmaterialbutton.dart
-    - lib/widgets/buttons/tabbar.dart
     - lib/widgets/buttons/backbutton.dart
     - lib/widgets/buttons/togglebutton.dart
 
@@ -140,6 +143,7 @@ flutter:
     - lib/widgets/dialogsalertspanels/bottomsheet.dart
     - lib/widgets/dialogsalertspanels/simpledialog.dart
     - lib/widgets/dialogsalertspanels/snackbar.dart
+    - lib/widgets/dialogsalertspanels/datepicker.dart
 
     - lib/widgets/input/form.dart
     - lib/widgets/input/rawkeyboardlistener.dart
@@ -186,6 +190,8 @@ flutter:
     - lib/widgets/paintingeffect/rotatedbox.dart
     - lib/widgets/paintingeffect/shadermask.dart
 
+    - lib/widgets/routing/navigator.dart
+
     - lib/widgets/scrolling/customscrollview.dart
     - lib/widgets/scrolling/nestedscrollview.dart
     - lib/widgets/scrolling/draggablescrollablesheet.dart
@@ -216,6 +222,8 @@ flutter:
     - lib/widgets/singlechildlayout/sizedbox.dart
     - lib/widgets/singlechildlayout/sizedoverflowbox.dart
     - lib/widgets/singlechildlayout/transform.dart
+    - lib/widgets/singlechildlayout/customsinglechildlayout.dart
+    - lib/widgets/singlechildlayout/unconstrainedbox.dart
 
     - lib/widgets/styling/flexible.dart
     - lib/widgets/styling/spacer.dart
@@ -243,6 +251,9 @@ flutter:
     - lib/pattern/viewpager/parallaxviewpager.dart
     - lib/pattern/viewpager/slider.dart
     - lib/pattern/viewpager/anim_slider.dart
+    - lib/pattern/viewpager/transformslider.dart
+    - lib/pattern/viewpager/cardflip.dart
+    - lib/pattern/viewpager/guide.dart
 
     - lib/pattern/display/bubble.dart
     - lib/pattern/display/badge.dart
@@ -250,6 +261,13 @@ flutter:
     - lib/pattern/display/layer.dart
     - lib/pattern/display/avatarlist.dart
     - lib/pattern/display/overflow.dart
+    - lib/pattern/display/layerblendmode.dart
+    - lib/pattern/display/delline.dart
+    - lib/pattern/display/autofold.dart
+    - lib/pattern/display/popup.dart
+    - lib/pattern/display/shadowmask.dart
+    - lib/pattern/display/rating.dart
+    - lib/pattern/display/floating.dart
 
     - lib/pattern/gesture/gesturescale.dart
 
@@ -268,9 +286,17 @@ flutter:
     - lib/pattern/listitem/itemlayout.dart
 
     - lib/pattern/setting/setting1.dart
+    - lib/pattern/setting/menusetting.dart
 
     - lib/pattern/list/searchlist.dart
     - lib/pattern/list/backdrop.dart
+    - lib/pattern/list/tree.dart
+    - lib/pattern/list/listdetail.dart
+    - lib/pattern/list/sliverheader.dart
+    - lib/pattern/list/sliverheaderwitheffect.dart
+    - lib/pattern/list/zoom.dart
+
+    - lib/pattern/custompaint/custompaint1.dart
 
     - lib/uikit/size.dart
     - lib/uikit/position.dart
@@ -291,6 +317,12 @@ flutter:
     - lib/uikit/visibility.dart
     - lib/uikit/curves.dart
     - lib/uikit/pullrefresh.dart
+    - lib/uikit/color.dart
+    - lib/uikit/linemetrics.dart
+    - lib/uikit/interpolator.dart
+    - lib/uikit/curvefitting.dart
+    - lib/uikit/drawimage.dart
+    - lib/uikit/repaintboundary.dart
 
     - lib/backend/provider.dart
     - lib/backend/stream.dart
@@ -300,12 +332,18 @@ flutter:
     - lib/backend/json.dart
     - lib/backend/lifecycle.dart
     - lib/backend/catcherror.dart
+    - lib/backend/key.dart
+    - lib/backend/statemanagement.dart
+    - lib/backend/providerstate.dart
+    - lib/backend/singleton.dart
 
     - lib/animation/tween/tweenanimationbuilder.dart
     - lib/animation/tween/testanim1.dart
     - lib/animation/tween/testanim2.dart
     - lib/animation/tween/testanim3.dart
     - lib/animation/tween/slidecard.dart
+    - lib/animation/tween/rotatemenu.dart
+    - lib/animation/tween/gift.dart
 
     - lib/animation/barchat/bar.dart
 
@@ -322,13 +360,18 @@ flutter:
     - lib/animation/animation/bouncing.dart
     - lib/animation/animation/staggeranimation.dart
     - lib/animation/animation/wave.dart
+    - lib/animation/animation/showup.dart
+    - lib/animation/animation/curveline.dart
+    - lib/animation/animation/implicitlyanimatedwidget.dart
 
     - lib/animation/loading/loading.dart
+    - lib/animation/loading/customprogress.dart
 
     - lib/animation/scrollanimation/scrollinganimation1.dart
     - lib/animation/scrollanimation/scrollinganimation2.dart
     - lib/animation/scrollanimation/scrollinganimation3.dart
     - lib/animation/scrollanimation/listtopbottom.dart
+    - lib/animation/scrollanimation/scrollparallax.dart
 
   fonts:
     - family: RubikMonoOne

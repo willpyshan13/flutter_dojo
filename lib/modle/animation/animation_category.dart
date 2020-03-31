@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dojo/animation/animation/bouncing.dart';
 import 'package:flutter_dojo/animation/animation/curve.dart';
+import 'package:flutter_dojo/animation/animation/curveline.dart';
 import 'package:flutter_dojo/animation/animation/focus.dart';
+import 'package:flutter_dojo/animation/animation/implicitlyanimatedwidget.dart';
 import 'package:flutter_dojo/animation/animation/sequence.dart';
+import 'package:flutter_dojo/animation/animation/showup.dart';
 import 'package:flutter_dojo/animation/animation/staggeranimation.dart';
 import 'package:flutter_dojo/animation/animation/typewriter.dart';
 import 'package:flutter_dojo/animation/animation/wave.dart';
@@ -11,12 +14,16 @@ import 'package:flutter_dojo/animation/animbutton/progressbutton.dart';
 import 'package:flutter_dojo/animation/animlist/animlist.dart';
 import 'package:flutter_dojo/animation/animlist/deleteanimlist.dart';
 import 'package:flutter_dojo/animation/barchat/bar.dart';
+import 'package:flutter_dojo/animation/loading/customprogress.dart';
 import 'package:flutter_dojo/animation/loading/loading.dart';
 import 'package:flutter_dojo/animation/physical/physical.dart';
 import 'package:flutter_dojo/animation/scrollanimation/listtopbottom.dart';
 import 'package:flutter_dojo/animation/scrollanimation/scrollinganimation1.dart';
 import 'package:flutter_dojo/animation/scrollanimation/scrollinganimation2.dart';
 import 'package:flutter_dojo/animation/scrollanimation/scrollinganimation3.dart';
+import 'package:flutter_dojo/animation/scrollanimation/scrollparallax.dart';
+import 'package:flutter_dojo/animation/tween/gift.dart';
+import 'package:flutter_dojo/animation/tween/rotatemenu.dart';
 import 'package:flutter_dojo/animation/tween/slidecard.dart';
 import 'package:flutter_dojo/animation/tween/testanim1.dart';
 import 'package:flutter_dojo/animation/tween/testanim2.dart';
@@ -91,6 +98,13 @@ List<DemoItem> buildLoadingDemoItems(String codePath) {
       documentationUrl: '',
       buildRoute: (context) => BaseWidget('Loading', codePath, LoadingWidget()),
     ),
+    DemoItem(
+      icon: Icons.pages,
+      title: 'CustomProgress',
+      subtitle: 'CustomProgress',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('CustomProgress', codePath, CustomProgressWidget()),
+    ),
   ];
 }
 
@@ -112,10 +126,31 @@ List<DemoItem> buildAnimationDemoItems(String codePath) {
     ),
     DemoItem(
       icon: Icons.date_range,
+      title: 'CurveLine',
+      subtitle: 'CurveLine',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('CurveLine', codePath, CurveLineWidget()),
+    ),
+    DemoItem(
+      icon: Icons.date_range,
       title: 'Focus',
       subtitle: 'Focus',
       documentationUrl: '',
       buildRoute: (context) => BaseWidget('Sequence', codePath, FocusWidget()),
+    ),
+    DemoItem(
+      icon: Icons.date_range,
+      title: 'ImplicitlyAnimatedWidget',
+      subtitle: 'ImplicitlyAnimatedWidget',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('ImplicitlyAnimatedWidget', codePath, ImplicitlyAnimatedWidgetWidget()),
+    ),
+    DemoItem(
+      icon: Icons.date_range,
+      title: 'ShowUp',
+      subtitle: 'ShowUp',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('ShowUp', codePath, ShowUpWidget()),
     ),
     DemoItem(
       icon: Icons.date_range,
@@ -199,6 +234,20 @@ List<DemoItem> buildTweenAnimDemoItems(String codePath) {
     ),
     DemoItem(
       icon: Icons.video_library,
+      title: 'Gift',
+      subtitle: 'Gift',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('Gift', codePath, GiftWidget()),
+    ),
+    DemoItem(
+      icon: Icons.video_library,
+      title: 'RotateMenu',
+      subtitle: 'RotateMenu',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('RotateMenu', codePath, RotateMenuWidget()),
+    ),
+    DemoItem(
+      icon: Icons.video_library,
       title: 'SlideCard',
       subtitle: 'SlideCard',
       documentationUrl: '',
@@ -230,6 +279,7 @@ List<DemoItem> buildBarChatDemoItems(String codePath) {
     ),
   ];
 }
+
 List<DemoItem> buildScrollAnimationDemoItems(String codePath) {
   return [
     DemoItem(
@@ -259,6 +309,13 @@ List<DemoItem> buildScrollAnimationDemoItems(String codePath) {
       subtitle: 'ListTopBottom',
       documentationUrl: '',
       buildRoute: (context) => BaseWidget('ListTopBottom', codePath, ListTopBottomWidget()),
+    ),
+    DemoItem(
+      icon: Icons.pages,
+      title: 'ScrollParallax',
+      subtitle: 'ScrollParallax',
+      documentationUrl: '',
+      buildRoute: (context) => BaseWidget('ScrollParallax', codePath, ScrollParallaxWidget()),
     ),
   ];
 }

@@ -8,6 +8,7 @@ import 'package:flutter_dojo/widgets/singlechildlayout/center.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/circleavatar.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/constrainedbox.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/container.dart';
+import 'package:flutter_dojo/widgets/singlechildlayout/customsinglechildlayout.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/fittedbox.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/fractionallysizedbox.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/intrinsicheight.dart';
@@ -19,6 +20,7 @@ import 'package:flutter_dojo/widgets/singlechildlayout/padding.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/sizedbox.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/sizedoverflowbox.dart';
 import 'package:flutter_dojo/widgets/singlechildlayout/transform.dart';
+import 'package:flutter_dojo/widgets/singlechildlayout/unconstrainedbox.dart';
 
 List<DemoItem> buildSingleChildLayoutDemoItems(String codePath) {
   return [
@@ -77,7 +79,7 @@ List<DemoItem> buildSingleChildLayoutDemoItems(String codePath) {
       title: 'CustomSingleChildLayout',
       subtitle: 'A widget that defers the layout of its single child to a delegate.',
       documentationUrl: 'https://api.flutter.dev/flutter/widgets/CustomSingleChildLayout-class.html',
-      buildRoute: (context) => BaseWidget('CustomSingleChildLayout', codePath, Container()),
+      buildRoute: (context) => BaseWidget('CustomSingleChildLayout', codePath, CustomSingleChildLayoutWidget()),
     ),
     DemoItem(
       icon: Icons.child_care,
@@ -158,6 +160,13 @@ List<DemoItem> buildSingleChildLayoutDemoItems(String codePath) {
       subtitle: 'A widget that applies a transformation before painting its child.',
       documentationUrl: 'https://api.flutter.dev/flutter/widgets/Transform-class.html',
       buildRoute: (context) => BaseWidget('Transform', codePath, TransformWidget()),
+    ),
+    DemoItem(
+      icon: Icons.child_care,
+      title: 'UnconstraindBox',
+      subtitle: 'UnconstraindBox',
+      documentationUrl: 'https://api.flutter.dev/flutter/widgets/UnconstraindBox-class.html',
+      buildRoute: (context) => BaseWidget('UnconstraindBox', codePath, UnconstrainedBoxWidget()),
     ),
   ];
 }
